@@ -5,11 +5,11 @@ import { standardCatch } from "./App";
 //web app firewall rules (clouflare)
 //https://github.com/NickCarducci/sausage
 //https://github.com/NickCarducci/bear
-//Allow (among) verily-pedestrian, (http.referer eq "sausage.saltbank.org") Referer
-//Block (for) sausage-maker-role(s) (http.host eq "sausage.saltbank.org" and not http.request.uri.path in {
-//"/" "/index.html" "/manifest.json" "/favicon.ico" "/api/"
-//}) or (http.host eq "sausage.saltbank.org" and http.request.uri.path in {"/api/"} and http.referer ne "bear-relay.backbank.workers.dev")  Hostname, URI Path
-//Block lazy-grizzlies (http.host eq "saltbank.org" and http.request.uri.path ne "/bear") Hostname, URI Path
+//Allow allow-statics (http.request.uri.path contains "/static" and http.host contains "saltbank.org" and http.referer contains "saltbank.org") URI Path, Hostname, Referer
+//Block verily-pedestrian (http.host eq "saltbank.org" and not http.request.uri.path in {"/bear" "/"}) Referer
+//Block (for) sausage-maker-role(s) (http.host eq "sausage.saltbank.org" and not http.request.uri.path in {"/" "/index.html" "/manifest.json" "/favicon.ico" "/api/"})
+//or (http.host eq "sausage.saltbank.org" and http.request.uri.path in {"/api/"} and http.referer ne "saltbank.org/bear") Hostname, URI Path
+//Block lazy-grizzlies (http.host eq "saltbank.org" and http.request.uri.path eq "/bear" and http.referer ne "sausage.saltbank.org") Hostname, URI Path
 
 const context = {
   env: { CF_API_KEY: process.env.CF_API_KEY } //"github repo settings>secrets>actions(also source)" }
@@ -23,7 +23,7 @@ export default class Fetch extends React.Component {
     fetch("https://saltbank.org/bear", {
       //this will be refered from sausage.saltbank.org page alone blocking with web app firewall site (Cloudflare)
       //"https://bear-relay.backbank.workers.dev", {
-      //forwarded here by page rule after referer firewall
+      //DO NOT forward here by page rule after referer firewall - workers can use environment variables but not WAFirewall
       //then the actual host and path sausage.saltbank.org/api from such the same referer may be called
       //USE BEAR PATH relay
       //mastercard-backbank.backbank.workers.dev
