@@ -11,9 +11,9 @@ import { standardCatch } from "./App";
 //or (http.host eq "sausage.saltbank.org" and http.request.uri.path in {"/api/"} and http.referer ne "saltbank.org/bear") Hostname, URI Path
 //Block lazy-grizzlies (http.host eq "saltbank.org" and http.request.uri.path eq "/bear" and http.referer ne "sausage.saltbank.org") Hostname, URI Path
 
-const context = {
+/*const context = {
   env: { CF_API_KEY: process.env.CF_API_KEY } //"github repo settings>secrets>actions(also source)" }
-};
+};*/
 export default class Fetch extends React.Component {
   state = {}; //CF_CF_API_KEY: ${{ secrets.CF_API_KEY }} wrangler dev &&
   fetcher = () => {
@@ -34,8 +34,8 @@ export default class Fetch extends React.Component {
         //"Access-Control-Request-Headers": ["Allow", "Origin"],
         //"Referrer-Policy": "cross-origin",
         //https://developers.cloudflare.com/firewall/api/cf-firewall-rules/post/
-        "X-Auth-Email": "nmcarducci@gmail.com",
-        "X-Auth-Key": context.env.CF_API_KEY, // cloudflare pages>settings>environment_variables
+        //"X-Auth-Email": "nmcarducci@gmail.com",
+        //"X-Auth-Key": context.env.CF_API_KEY, // cloudflare pages>settings>environment_variables
         "Content-Type": "Application/JSON",
         "Access-Control-Request-Method": "POST"
       },
