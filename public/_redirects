@@ -1,0 +1,2 @@
+/api* /api:splat 302
+/bear* /bear 302
