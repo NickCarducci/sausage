@@ -149,7 +149,7 @@ class PathRouter extends React.Component {
                 <Switch key={location.key} location={location}>
                   <Route
                     render={(props) =>
-                      !(
+                      (
                         window.location.href.includes("sausage.saltbank.org") ||
                         window.location.href.includes("i7l8qe.csb.app")
                       ) ? (
