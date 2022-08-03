@@ -2,7 +2,12 @@
 
 export default {
   //const bearer = context.CF_API_Key;
-  fetch(request, env, context) {
+  fetch(rq, env, context) {
+    //https://developers.cloudflare.com/workers/runtime-apis/request/
+    const request = rq.clone().json();
+    //https://developers.cloudflare.com/workers/examples/alter-headers/
+    // Clone the response so that it's no longer immutable
+    //const request = new Response(rq.body, rq);
     return fetch("https://sausage.saltbank.org/api", {
       //USED BEAR PATH for actual api path (differnet zone)
       //https://community.cloudflare.com/t/is-a-worker-allowed-to-make-requests-to-another-worker/194733/5
