@@ -19,7 +19,7 @@ deprecated: [eglue](https://github.com/NickCarducci/eglue/) on [mastercard-backb
    Hostname, URI Path
 
 2. Block (for)
-   sausage-maker-role(s) _(http.host eq "sausage.saltbank.org" and not http.request.uri.path in {"/" "/index.html" "/manifest.json" "/favicon.ico" "/api/"}) or (http.host eq "sausage.saltbank.org" and http.request.uri.path in {"/api/"} and http.referer ne "bear-relay.backbank.workers.dev") ~~or (not http.request.uri.path in {"/" "/api"})~~_
+   sausage-maker-role(s) _(http.host eq "sausage.saltbank.org" and not http.request.uri.path in {"/" "/index.html" "/manifest.json" "/favicon.ico" "/api/"}) or (http.host eq "sausage.saltbank.org" and http.request.uri.path in {"/api/"} and http.referer ne "saltbank.org/bear") ~~or (not http.request.uri.path in {"/" "/api"})~~_
    Hostname, URI Path, Referer
 
 3. Block
@@ -37,8 +37,8 @@ deprecated: [eglue](https://github.com/NickCarducci/eglue/) on [mastercard-backb
 1. sausage.saltbank.org/api\*
    Always Use HTTPS (this is the only worker route)
 
-2. saltbank.org/bear
-   Forwarding URL (Status Code: 302 - Temporary Redirect, Url: https://bear-relay.backbank.workers.dev/)
+~~2. saltbank.org/bear
+   Forwarding URL (Status Code: 302 - Temporary Redirect, Url: https://bear-relay.backbank.workers.dev/)~~ DO NOT forward here by page rule after referer firewall - workers can use environment variables but not WAFirewall.
 
 #### Page Environment variables [useless with frameworks](https://developers.cloudflare.com/pages/platform/build-configuration/):
 
