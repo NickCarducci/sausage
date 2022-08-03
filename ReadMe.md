@@ -1,6 +1,6 @@
 This is a project for an api sandbox that makes use of page as well as firewall rules from cloudflare.
 
-Two service bindings ARE REQUIRED to test bodacious requests using (cloudflare service) workers>settings>variables && (firebase) authentication, (bear) bearer and api endpoints.
+Two service bindings ARE REQUIRED to test bodacious requests using (cloudflare service) workers>settings>variables && (firebase) authentication, (bear) bearer and api endpoints, and will probably be suited by postman the same as this react framework + firebase implementation.
 
 ## Cloudflare page (react framework) + service worker + service binding(s)
 
