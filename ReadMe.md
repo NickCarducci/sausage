@@ -35,7 +35,7 @@ deprecated: [eglue](https://github.com/NickCarducci/eglue/) on [mastercard-backb
 #### Page rules:
 
 1. sausage.saltbank.org/api\*
-   Always Use HTTPS
+   Always Use HTTPS (this is the only worker route)
 
 2. saltbank.org/bear
    Forwarding URL (Status Code: 302 - Temporary Redirect, Url: https://bear-relay.backbank.workers.dev/)
