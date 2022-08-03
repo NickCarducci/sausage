@@ -1,3 +1,2 @@
 /api* /api:splat 302
-/static* /index.html 302
 /bear* /bear 302
