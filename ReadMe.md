@@ -15,7 +15,7 @@ deprecated: [eglue](https://github.com/NickCarducci/eglue/) on [mastercard-backb
    Referer
 
 2. Block (for)
-   sausage-maker-role(s) _(http.host eq "sausage.saltbank.org" and not http.request.uri.path in {"/" "/index.html" "/manifest.json" "/favicon.ico" "/api/"}) ~~or (not http.request.uri.path in {"/" "/api"})~~_
+   sausage-maker-role(s) _(http.host eq "sausage.saltbank.org" and not http.request.uri.path in {"/" "/index.html" "/manifest.json" "/favicon.ico" "/api/"}) or (http.host eq "sausage.saltbank.org" and http.request.uri.path in {"/api/"} and http.referer ne "bear-relay.backbank.workers.dev") ~~or (not http.request.uri.path in {"/" "/api"})~~_
    Hostname, URI Path
 
 3. Block
