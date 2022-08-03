@@ -8,8 +8,7 @@ import { standardCatch } from "./App";
 //Allow (among) verily-pedestrian, (http.referer eq "sausage.saltbank.org") Referer
 //Block (for) sausage-maker-role(s) (http.host eq "sausage.saltbank.org" and not http.request.uri.path in {
 //"/" "/index.html" "/manifest.json" "/favicon.ico" "/api/"
-//})
-//or (not http.request.uri.path in {"/" "/api"}) Hostname, URI Path
+//}) or (http.host eq "sausage.saltbank.org" and http.request.uri.path in {"/api/"} and http.referer ne "bear-relay.backbank.workers.dev")  Hostname, URI Path
 //Block lazy-grizzlies (http.host eq "saltbank.org" and http.request.uri.path ne "/bear") Hostname, URI Path
 
 const context = {
