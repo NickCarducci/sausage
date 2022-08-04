@@ -3,7 +3,7 @@
 export default {
   //const bearer = context.CF_API_Key;
   async fetch(rq, env, context) {
-    if (rq.method === "OPTIONS")
+    /*if (rq.method === "OPTIONS")
       return rq.http.Origin === "https://sausage.saltbank.org"
         ? new Response("yeah alright", {
             status: 200,
@@ -20,11 +20,19 @@ export default {
             //"Access-Control-Allow-Origin": rq.http.Origin,
             headers: Object.keys(JSON.parse(rq.headers))
             //"sausage.saltbank.org",
-          });
+          });*/
     //https://developers.cloudflare.com/workers/examples/modify-response/
     //var response =
     //https://developers.cloudflare.com/workers/examples/modify-request-property/
-    const request = new Request(
+  
+
+    //request = new Response(rq.body, rq);
+    //https://developers.cloudflare.com/workers/runtime-apis/request/
+    //const request = rq.clone().json();
+    //https://developers.cloudflare.com/workers/examples/alter-headers/
+    // Clone the response so that it's no longer immutable
+    //maxAge: 3600
+    return await fetch(new Request(
       new URL("https://sausage.saltbank.org/api").toString(),
       new Request(rq, {
         //USED BEAR PATH for actual api path (differnet zone)
@@ -33,7 +41,7 @@ export default {
         //origin: true,
         //cors: "origin",
         // Change method
-        method: "POST",
+        method: rq.method,
         // Change body
         body: JSON.stringify(
           rq.body
@@ -55,17 +63,9 @@ export default {
           //"Access-Control-Request-Method": request.method
         },
         // Change a Cloudflare feature on the outbound response
-        cf: { apps: false }
+        //cf: { apps: false }
       })
-    );
-
-    //request = new Response(rq.body, rq);
-    //https://developers.cloudflare.com/workers/runtime-apis/request/
-    //const request = rq.clone().json();
-    //https://developers.cloudflare.com/workers/examples/alter-headers/
-    // Clone the response so that it's no longer immutable
-    //maxAge: 3600
-    return fetch(request)
+    ))
       .then(async (rs) => await rs.json())
       .then((result) => {
         return new Response(JSON.stringify(result));
