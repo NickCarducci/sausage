@@ -29,12 +29,9 @@ export default class Fetch extends React.Component {
       //mastercard-backbank.backbank.workers.dev
       //origin: true,
       //cors: "origin",
-      //redirect: 'follow',
-      //credentials: 'same-origin',
-      mode:"no-cors",
       headers: {
         //Origin: "https://i7l8qe.csb.app",
-        //"Access-Control-Request-Headers": ["Allow", "Origin"],
+        "Access-Control-Request-Headers": ["Allow", "Origin"],
         //"Referrer-Policy": "cross-origin",
         //https://developers.cloudflare.com/firewall/api/cf-firewall-rules/post/
         //"X-Auth-Email": "nmcarducci@gmail.com",
