@@ -29,8 +29,8 @@ export default class Fetch extends React.Component {
       //mastercard-backbank.backbank.workers.dev
       //origin: true,
       //cors: "origin",
-      redirect: 'follow',
-      credentials: 'same-origin',
+      //redirect: 'follow',
+      //credentials: 'same-origin',
       mode:"no-cors",
       headers: {
         //Origin: "https://i7l8qe.csb.app",
