@@ -1,9 +1,10 @@
 
-name = "bear"
+name = "bear-relay-dev"
 type = "javascript"
 account_id = "9ddca7c9df604668fc6d14f079b2f066"
 zone_id = "6202e995eadc857cd8e97e8ba608286d" #https://github.com/NickCarducci/mastercard-backbank/blob/main/wrangler.toml
 # usage_model = ''
+route = "saltbank.org/bear"
 compatibility_flags = []
 workers_dev = false
 compatibility_date = "2022-08-02"
@@ -11,17 +12,17 @@ compatibility_date = "2022-08-02"
 #[env.production.vars]
 #bear = "mastercard-backbank-service-binding"
 [[services]]
-binding = "BEAR"
+binding = "BANK"
 service = "mastercard-backbank-service-binding"
 
 [env.production]
 # exclude = ["node_modules","*"]
 # include = ["dist/*","src/*"]
-name = "mastercard-backbank"
+name = "bear-relay"
 route = "saltbank.org/bear"
 
 [env.staging]
-name = "mastercard-backbank-staging"
+name = "bear-relay-staging"
 route = "saltbank.org/bear"
 
 # https://community.cloudflare.com/t/is-a-worker-allowed-to-make-requests-to-another-worker/194733/5
@@ -31,10 +32,16 @@ route = "saltbank.org/bear"
 # https://community.cloudflare.com/t/is-a-worker-allowed-to-make-requests-to-another-worker/194733/7
 
 [build.upload]
+format = "modules" # "service-workers"
 # This just works as a single file quick edit from the dashboard without bashing wrangler
+# unless post request?
+# https://developers.cloudflare.com/workers/examples/alter-headers
+# "You can also use the custom-headers-example template to deploy this code to your custom domain."
+# try tomorrow
 # format = "service-workers" # "modules"
 # dir = "build/worker" # dist for libraries...
-main = "./index.js"
+dir = "src"
+main = "./index.mjs"
 
-[build]
-command = "worker-build --release" 
+#[build]
+#command = "worker-build --release" 
