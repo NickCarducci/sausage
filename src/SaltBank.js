@@ -21,6 +21,19 @@ class SaltBank extends React.Component {
         onMouseLeave: () => this.setState({ ["hoverin" + n]: false })
       };
     };
+    const setting2 = (n, more) => {
+      return {
+        style: {
+          color: this.state["hoverin" + n]
+            ? "rgb(80,100,120)"
+            : "rgb(50,70,90)",
+          cursor: "pointer",
+          ...more
+        },
+        onMouseEnter: () => this.setState({ ["hoverin" + n]: true }),
+        onMouseLeave: () => this.setState({ ["hoverin" + n]: false })
+      };
+    };
     return (
       <div
         style={{
@@ -46,7 +59,13 @@ class SaltBank extends React.Component {
         >
           &diams;
         </a>
-        <div>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center"
+          }}
+        >
           <h1 {...setting(0)}>Salt</h1>
           <br />
           <a href="https://truncatedwholesaletax.com">
@@ -65,6 +84,10 @@ class SaltBank extends React.Component {
             <h4 {...setting(4)}>timeclock unlock</h4>
           </a>
           <br />
+          <a href="https://www.quora.com/unanswered/Is-government-not-fining-judges-for-successful-appeals-not-evidence-of-fiduciary-embezzlement">
+            <h4 {...setting2(10)}>novation fraud negotiated</h4>
+          </a>
+          <br />
           <a href="https://maxroyalties.quora.com">
             <h4 {...setting(5)}>industry specific payday loans</h4>
           </a>
@@ -81,12 +104,32 @@ class SaltBank extends React.Component {
             <h4 {...setting(7)}>direct or exclusion</h4>
           </a>
           <br />
+          <div
+            style={{
+              width: "min-content",
+              minWidth: "150px",
+              color: "white",
+              backgroundColor: "rgba(20,20,20,.6)",
+              fontSize: "14px",
+              padding: "6px"
+            }}
+          >
+            Rollover insurance
+            <hr />
+            Renegotiation at the end of the period is as meaningless as cdc
+            mortality significance and unconscionable
+          </div>
+          <br />
           <a href="https://regressivecops.quora.com">
             <h4 {...setting(7)}>fiduciary cops</h4>
           </a>
           <br />
           <a href="https://courttechnology.quora.com">
             <h4 {...setting(7)}>state machinery</h4>
+          </a>
+          <br />
+          <a href="https://www.quora.com/unanswered/Is-government-not-fining-judges-for-successful-appeals-not-evidence-of-fiduciary-embezzlement">
+            <h4 {...setting2(9)}>tort embezzlement reform</h4>
           </a>
         </div>
       </div>
