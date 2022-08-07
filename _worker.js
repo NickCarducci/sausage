@@ -1,7 +1,7 @@
 //https://developers.cloudflare.com/pages/how-to/refactor-a-worker-to-pages-functions/
 export default {
   async fetch(r, env) {
-    const url = new URL(request.url);
+    const url = new URL(r.url);
     if (url.pathname.startsWith('/bear')) {
       
       /*const http = { Origin: r.headers.get("Origin") };
