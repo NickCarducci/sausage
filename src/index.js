@@ -17,7 +17,7 @@ class PathRouter extends React.Component {
     this.state = {
       browser: name
     };
-    this.bf = React.createRef();
+    //this.bf = React.createRef();
     this.matchMedia = null;
     this.deferredPrompt = null;
   }
@@ -153,7 +153,7 @@ class PathRouter extends React.Component {
                     render={(props) =>
                       /*this.props.history === "/bear" ? (
                         <Bear ref={{ current: { bear: this.bf } }} />
-                      ) :*/ (
+                      ) :*/ !(
                         //delete for deploy
                         (
                           window.location.href.includes(
@@ -190,7 +190,7 @@ class PathRouter extends React.Component {
                               this.deferredPrompt = null;
                             }
                           }}
-                          functions={{ bear: this.bf.current.onclick }}
+                          //functions={{ bear: this.bf.current.onclick }}
                         />
                       ) : (
                         <SaltBank
