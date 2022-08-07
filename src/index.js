@@ -4,6 +4,7 @@ import { Route, BrowserRouter, Switch } from "react-router-dom";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import { UAParser } from "ua-parser-js";
 import App from "./App";
+import Bear from "../functions/bear/[[path]].js";
 import SaltBank from "./SaltBank";
 
 var check = null;
@@ -16,6 +17,7 @@ class PathRouter extends React.Component {
     this.state = {
       browser: name
     };
+    this.bf = React.createRef();
     this.matchMedia = null;
     this.deferredPrompt = null;
   }
@@ -149,10 +151,16 @@ class PathRouter extends React.Component {
                 <Switch key={location.key} location={location}>
                   <Route
                     render={(props) =>
-                      (
-                        window.location.href.includes("sausage.saltbank.org") ||
-                        window.location.href.includes("i7l8qe.csb.app")
-                      ) ? (
+                      this.props.history === "/bear" ? (
+                        <Bear ref={{ current: { bear: this.bf } }} />
+                      ) : !(
+                          //delete for deploy
+                          (
+                            window.location.href.includes(
+                              "sausage.saltbank.org"
+                            ) || window.location.href.includes("i7l8qe.csb.app")
+                          )
+                        ) ? (
                         <App
                           unmountFirebase={this.state.unmountFirebase}
                           showPWAprompt={showPWAprompt}
@@ -182,6 +190,7 @@ class PathRouter extends React.Component {
                               this.deferredPrompt = null;
                             }
                           }}
+                          functions={{ bear: this.bf.current.onclick }}
                         />
                       ) : (
                         <SaltBank
