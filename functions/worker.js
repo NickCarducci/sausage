@@ -27,9 +27,9 @@ export default {
               //"sausage.saltbank.org",
             });
       }*/
-      return await fetch(new Request("https://sausage.saltbank.org/api/",r));//.then(async a=>await a.json());
+      //return await fetch(new Request("https://sausage.saltbank.org/api/",r));//.then(async a=>await a.json());
       //return await env.BANK.fetch(new Request("./api/", r));
-      //return new Response('Ok');
+      return new Response('Ok');
     }
     // Otherwise, serve the static assets.
     // Without this, the Worker will error and no assets will be served.
