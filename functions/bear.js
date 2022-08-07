@@ -1,6 +1,7 @@
-import React from "react";
+//import React from "react";
 //https://developers.cloudflare.com/pages/how-to/refactor-a-worker-to-pages-functions/
-const Bear = {
+//const Bear =
+export default {
   async fetch(r, env) {
     const url = new URL(r.url);
     //if (url.pathname.startsWith("/bear")) {
@@ -42,6 +43,6 @@ const Bear = {
   }
 };
 
-export default React.forwardRef((props, ref) => {
+/*export default React.forwardRef((props, ref) => {
   return <Bear fetch={ref.current["bear"]} {...props} />;
-});
+});*/
