@@ -27,7 +27,8 @@ export default {
               //"sausage.saltbank.org",
             });
       }
-      return await env.BANK.fetch(new Request("./api/", r));
+      return await fetch("https://sausage.saltbank.org/api/");//.then(async a=>await a.json());
+      //return await env.BANK.fetch(new Request("./api/", r));
       //return new Response('Ok');
     }
     // Otherwise, serve the static assets.
