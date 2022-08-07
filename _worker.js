@@ -1,10 +1,10 @@
 //https://developers.cloudflare.com/pages/how-to/refactor-a-worker-to-pages-functions/
 export default {
-  async fetch(request, env) {
+  async fetch(r, env) {
     const url = new URL(request.url);
     if (url.pathname.startsWith('/bear')) {
       
-      const http = { Origin: r.headers.get("Origin") };
+      /*const http = { Origin: r.headers.get("Origin") };
       if (r.method === "OPTIONS") {//possibly redundant with Web App Firewall for page
         return http.Origin.includes("sausage.saltbank.org")
           ? new Response("yeah alright", {
@@ -26,8 +26,8 @@ export default {
               //"Access-Control-Allow-Origin": rq.http.Origin,
               //"sausage.saltbank.org",
             });
-      }
-      return await fetch("https://sausage.saltbank.org/api/");//.then(async a=>await a.json());
+      }*/
+      return await fetch(new Request("https://sausage.saltbank.org/api/",r));//.then(async a=>await a.json());
       //return await env.BANK.fetch(new Request("./api/", r));
       //return new Response('Ok');
     }
