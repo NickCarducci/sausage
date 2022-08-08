@@ -6,10 +6,13 @@ import { standardCatch } from "./App";
 //https://github.com/NickCarducci/sausage
 //https://github.com/NickCarducci/bear
 //Allow allow-statics (http.request.uri.path contains "/static" and http.host contains "saltbank.org" and http.referer contains "saltbank.org") URI Path, Hostname, Referer
-//Block verily-pedestrian (http.host eq "saltbank.org" and not http.request.uri.path in {"/bear" "/"}) Referer
-//Block (for) sausage-maker-role(s) (http.host eq "sausage.saltbank.org" and not http.request.uri.path in {"/" "/index.html" "/manifest.json" "/favicon.ico" "/api/"})
-//or (http.host eq "sausage.saltbank.org" and http.request.uri.path in {"/api/"} and http.referer ne "saltbank.org/bear") Hostname, URI Path
-//Block lazy-grizzlies (http.host eq "saltbank.org" and http.request.uri.path eq "/bear" and http.referer ne "sausage.saltbank.org") Hostname, URI Path
+//Block (to) stay-on-path (http.host eq "saltbank.org" and not http.request.uri.path in {
+//"/" "/favicon.ico" "/manifest.json" "/index.html"
+//}) or (http.host eq "sausage.saltbank.org" and not http.request.uri.path in {
+//"/" "/favicon.ico" "/manifest.json" "/index.html" "/bear"
+//}) Hostname, URI Path
+//Block (for) sausage-maker-role(s) (http.host eq "api.saltbank.org" and http.referer ne "https://sausage.saltbank.org/") Hostname, Referer
+//Block pedestrian-grizzlies (http.host eq "sausage.saltbank.org" and http.request.uri.path contains "/bear" and http.referer ne "https://sausage.saltbank.org/") Hostname, URI Path, Referer
 
 /*const context = {
   env: { CF_API_KEY: process.env.CF_API_KEY } //"github repo settings>secrets>actions(also source)" }
