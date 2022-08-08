@@ -61,8 +61,8 @@ export const onRequestOptions: PagesFunction<{}> = async (
 ): Promise<Response> => {
   const origin = context.request.headers.get("Origin");
   //const url = new URL(context.request.url);
-  console.log(origin);
-  return new Response(null, {
+  //console.log(origin);
+  return new Response("origin/referer: " + origin + " options", {
     status: 204,
     headers: {
       "Access-Control-Allow-Origin": origin,
@@ -81,8 +81,8 @@ export const onRequestPost: PagesFunction<{}> = async ({
   const request = new Request(r, {
     //headers: { Authorization: `bearer ${env.CF_API_TOKEN}` }
   });
-
-  return await fetch(new Request("https://sausage.saltbank.org/api/", request));
+  return new Response("posted");
+  //return await fetch(new Request("https://sausage.saltbank.org/api/", request));
   //.then(async (res) => await res.json())
   //.then((result) => JSON.stringify(result))
   /*.then(
