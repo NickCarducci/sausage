@@ -83,7 +83,11 @@ export const onRequestPost: PagesFunction<{}> = async ({
   });
   //return new Response("posted");
   //return await fetch(new Request("https://sausage.saltbank.org/api/", request));
-  return await fetch("https://api.saltbank.org/");
+  try {
+    return await fetch("https://api.saltbank.org/");
+  } catch (e) {
+    return new Response(e, { status: 403, message: "bad subdomain" });
+  }
   //return await env.BANK.fetch(new Request("./api", r));//service binding N/A for now (8/2022)
   //.then(async (res) => await res.json())
   //.then((result) => JSON.stringify(result))
