@@ -30,7 +30,7 @@ export default {
                 });
           }* /
     const request = new Request(r, {
-      headers: { Authorization: `bearer ${env.CF_API_TOKEN}` }
+      headers: { Authorization: `Bearer ${env.CF_API_TOKEN}` }
     });
     return await fetch(
       new Request("https://sausage.saltbank.org/api/", request)
