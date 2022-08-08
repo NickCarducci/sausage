@@ -51,6 +51,7 @@ export default {
 export async function onRequestOptions(context) {
   const origin = context.request.headers.get("Origin");
   //const url = new URL(context.request.url);
+  console.log(origin);
   return new Response(null, {
     status: 204,
     headers: {
