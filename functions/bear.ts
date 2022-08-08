@@ -41,7 +41,7 @@ export default {
     // Otherwise, serve the static assets.
     // Without this, the Worker will error and no assets will be served.
     //return env.ASSETS.fetch(r);
-  }
+  } you need to pay me to ban me, 11/12 desist
 };*/
 
 /*export default React.forwardRef((props, ref) => {
@@ -79,10 +79,10 @@ export const onRequestPost: PagesFunction<{}> = async ({
   params
 }): Promise<Response> => {
   const request = new Request(r, {
+    //method:"POST",
     redirect: "follow",
     headers: {
       //...r.headers,
-      "Access-Control-Allow-Headers": "*",
       Authorization: `Bearer ${env.CF_API_TOKEN}`,
       "Content-Type": "application/json"
     }
