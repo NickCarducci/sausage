@@ -1,3 +1,4 @@
+/*import { Router } from "itty-router";
 //import React from "react";
 //https://developers.cloudflare.com/pages/how-to/refactor-a-worker-to-pages-functions/
 //const Bear =
@@ -27,7 +28,7 @@ export default {
                   //"Access-Control-Allow-Origin": rq.http.Origin,
                   //"sausage.saltbank.org",
                 });
-          }*/
+          }* /
     const request = new Request(r, {
       headers: { Authorization: `bearer ${env.CF_API_TOKEN}` }
     });
@@ -41,8 +42,33 @@ export default {
     // Without this, the Worker will error and no assets will be served.
     //return env.ASSETS.fetch(r);
   }
-};
+};*/
 
 /*export default React.forwardRef((props, ref) => {
   return <Bear fetch={ref.current["bear"]} {...props} />;
 });*/
+
+export async function onRequestOptions(context) {
+  const origin = context.request.headers.get("Origin");
+  //const url = new URL(context.request.url);
+  return new Response(null, {
+    status: 204,
+    headers: {
+      "Access-Control-Allow-Origin": origin,
+      "Access-Control-Allow-Headers": "*",
+      "Access-Control-Allow-Methods": "POST, GET, OPTIONS",
+      "Access-Control-Max-Age": "86400"
+    }
+  });
+}
+
+export async function onRequestPost({ request: r, env, params }) {
+  const request = new Request(r, {
+    headers: { Authorization: `bearer ${env.CF_API_TOKEN}` }
+  });
+
+  return await fetch(new Request("https://sausage.saltbank.org/api/", request))
+    //.then(async (res) => await res.json())
+    //.then((result) => JSON.stringify(result))
+    .then((info) => new Response(info));
+}
