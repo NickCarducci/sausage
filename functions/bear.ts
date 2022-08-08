@@ -83,7 +83,8 @@ export const onRequestPost: PagesFunction<{}> = async ({
     headers: {
       //...r.headers,
       "Access-Control-Allow-Headers": "*",
-      Authorization: `Bearer ${env.CF_API_TOKEN}`
+      Authorization: `Bearer ${env.CF_API_TOKEN}`,
+      "Content-Type": "application/json"
     }
   });
   //return new Response("posted");
