@@ -66,9 +66,7 @@ const optionPostal = async ({ request: r, env, params }): Promise<Response> => {
   });
   //return new Response("posted");
   try {
-    return await fetch(
-      new Request("https://sausage.saltbank.org/api/", request)
-    );
+    return await fetch(new Request("https://api.saltbank.org/", request));
   } catch (e) {
     return new Response(e + " error", {
       status: 403,
