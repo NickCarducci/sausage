@@ -63,7 +63,7 @@ export const onRequestOptions: PagesFunction<{}> = async ({
 }): Promise<Response> => {
   const origin = r.headers.get("Origin");
   //const url = new URL(context.request.url);
-  return new Response(null, {
+  return new Response("optioned", {
     status: 204,
     headers: {
       "Access-Control-Allow-Origin": origin,
