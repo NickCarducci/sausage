@@ -92,7 +92,7 @@ export const onRequestPost: PagesFunction<{}> = async ({
   return await fetch("https://api.saltbank.org/", {
     method: "POST",
     headers: {
-      Authorization: `Bearer 000`
+      Authorization: `Bearer ${env.CF_API_TOKEN}`
     }
   });
   //return await env.BANK.fetch(new Request("./api", r));//service binding N/A for now (8/2022)
