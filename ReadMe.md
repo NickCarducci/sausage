@@ -27,7 +27,7 @@ deprecated: [eglue](https://github.com/NickCarducci/eglue/) on [mastercard-backb
    Hostname, Referer
 
 4. Block
-   pedestrian-grizzlies _(http.host eq "sausage.saltbank.org" and http.request.uri.path contains "/bear" and http.referer ne "sausage.saltbank.org")_
+   pedestrian-grizzlies _(http.host eq "sausage.saltbank.org" and http.request.uri.path contains "/bear" and not http.referer contains "sausage.saltbank.org")_
    Hostname, URI Path, Referer
 
 ([Referer requests hostname](https://markethistory.quora.com/Is-a-host-name-not-the-responding-URL-1)) ?:query
