@@ -2,7 +2,7 @@ This is a project for an api sandbox that makes use of page as well as firewall 
 
 Two services bound by a binding ARE REQUIRED to test bodacious requests using (cloudflare service) workers>settings>variables && (firebase) authentication, (bear) bearer and api endpoints, and will probably be suited by postman the same as this react framework + firebase implementation.
 
-# especially with environment variables from pages function sent in the service worker
+# especially with environment variables from pages function (pages' environment variables are only available during the compilation of javascript) sent in the service worker
 
 ## however, [firewall rules for a page can be applied to subdomains](https://github.com/NickCarducci/bear) that are the custom domain for workers
 
