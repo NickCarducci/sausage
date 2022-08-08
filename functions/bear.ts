@@ -48,6 +48,14 @@ export default {
   return <Bear fetch={ref.current["bear"]} {...props} />;
 });*/
 
+export const onRequest: PagesFunction<{}> = async ({
+  request: r,
+  env,
+  params
+}): Promise<Response> => {
+  return new Response("Ok");
+};
+
 export const onRequestOptions: PagesFunction<{}> = async (
   context
 ): Promise<Response> => {
