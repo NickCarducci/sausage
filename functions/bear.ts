@@ -30,7 +30,7 @@ export default {
                 });
           }* /
     const request = new Request(r, {
-      headers: { Authorization: `Bearer ${env.CF_API_TOKEN}` }
+      headers: { Authorization: `bearer ${env.CF_API_TOKEN}` }
     });
     return await fetch(
       new Request("https://sausage.saltbank.org/api/", request)
@@ -56,11 +56,33 @@ export const onRequest: PagesFunction<{}> = async ({
   return new Response("Ok");
 };
 
-const optionPostal = async ({ request: r, env, params }): Promise<Response> => {
+export const onRequestOptions: PagesFunction<{}> = async ({
+  request: r,
+  env,
+  params
+}): Promise<Response> => {
+  const origin = r.headers.get("Origin");
+  //const url = new URL(context.request.url);
+  return new Response(null, {
+    status: 204,
+    headers: {
+      "Access-Control-Allow-Origin": origin,
+      "Access-Control-Allow-Headers": "*",
+      "Access-Control-Allow-Methods": "POST, GET, OPTIONS",
+      "Access-Control-Max-Age": "86400"
+    }
+  });
+};
+export const onRequestPost: PagesFunction<{}> = async ({
+  request: r,
+  env,
+  params
+}): Promise<Response> => {
   const request = new Request(r, {
     headers: {
       //...r.headers,
-      Authorization: `bearer ${env.CF_API_TOKEN}`,
+      "Access-Control-Allow-Headers": "*",
+      Authorization: `Bearer ${env.CF_API_TOKEN}`,
       redirect: "follow"
     }
   });
@@ -90,5 +112,3 @@ const optionPostal = async ({ request: r, env, params }): Promise<Response> => {
         })
     );*/
 };
-export const onRequestOptions: PagesFunction<{}> = optionPostal;
-export const onRequestPost: PagesFunction<{}> = optionPostal;
