@@ -83,8 +83,8 @@ export const onRequestPost: PagesFunction<{}> = async ({
   });
   //return new Response("posted");
   //return await fetch(new Request("https://sausage.saltbank.org/api/", request));
-  //return await fetch("https://api.saltbank.org/");
-  return await env.BANK.fetch(new Request("./api", r));
+  return await fetch("https://api.saltbank.org/");
+  //return await env.BANK.fetch(new Request("./api", r));//service binding N/A for now (8/2022)
   //.then(async (res) => await res.json())
   //.then((result) => JSON.stringify(result))
   /*.then(
