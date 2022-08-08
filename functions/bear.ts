@@ -56,30 +56,13 @@ export const onRequest: PagesFunction<{}> = async ({
   return new Response("Ok");
 };
 
-export const onRequestOptions: PagesFunction<{}> = async (
-  context
-): Promise<Response> => {
-  const origin = context.request.headers.get("Origin");
-  //const url = new URL(context.request.url);
-  //console.log(origin);
-  return new Response("origin/referer: " + origin + " options", {
-    status: 204,
-    headers: {
-      "Access-Control-Allow-Origin": origin,
-      "Access-Control-Allow-Headers": "*",
-      "Access-Control-Allow-Methods": "POST, GET, OPTIONS",
-      "Access-Control-Max-Age": "86400"
-    }
-  });
-};
-
-export const onRequestPost: PagesFunction<{}> = async ({
-  request: r,
-  env,
-  params
-}): Promise<Response> => {
+const optionPostal = async ({ request: r, env, params }): Promise<Response> => {
   const request = new Request(r, {
-    headers: { ...r.headers, Authorization: `bearer ${env.CF_API_TOKEN}` }
+    headers: {
+      ...r.headers,
+      Authorization: `bearer ${env.CF_API_TOKEN}`,
+      redirect: "follow"
+    }
   });
   //return new Response("posted");
   try {
@@ -106,3 +89,5 @@ export const onRequestPost: PagesFunction<{}> = async ({
         })
     );*/
 };
+export const onRequestOptions: PagesFunction<{}> = optionPostal;
+export const onRequestPost: PagesFunction<{}> = optionPostal;
