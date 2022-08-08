@@ -1,6 +1,10 @@
 This is a project for an api sandbox that makes use of page as well as firewall rules from cloudflare.
 
-Two service bindings ARE REQUIRED to test bodacious requests using (cloudflare service) workers>settings>variables && (firebase) authentication, (bear) bearer and api endpoints, and will probably be suited by postman the same as this react framework + firebase implementation.
+Two services bound by a binding ARE REQUIRED to test bodacious requests using (cloudflare service) workers>settings>variables && (firebase) authentication, (bear) bearer and api endpoints, and will probably be suited by postman the same as this react framework + firebase implementation.
+
+# especially with environment variables from pages function sent in the service worker
+
+## however, [firewall rules for a page can be applied to subdomains](https://github.com/NickCarducci/bear) that are the custom domain for workers
 
 ## Cloudflare page (react framework) + service worker + service binding(s)
 
@@ -14,16 +18,16 @@ deprecated: [eglue](https://github.com/NickCarducci/eglue/) on [mastercard-backb
    allow-static _(http.request.uri.path contains "/static" and http.host contains "saltbank.org" and http.referer contains "saltbank.org")_
    URI Path, Hostname, Referer
 
-1. Block
-   verily-pedestrian _(http.host eq "saltbank.org" and not http.request.uri.path in {"/bear" "/"})_
+2. Block
+   stay-on-path _(http.host eq "saltbank.org" and not http.request.uri.path in {"/" "/favicon.ico" "/manifest.json" "/index.html"}) or (http.host eq "sausage.saltbank.org" and not http.request.uri.path in {"/" "/favicon.ico" "/manifest.json" "/index.html" "/bear"})_
    Hostname, URI Path
 
-2. Block (for)
-   sausage-maker-role(s) _(http.host eq "sausage.saltbank.org" and not http.request.uri.path in {"/" "/index.html" "/manifest.json" "/favicon.ico" "/api/"}) or (http.host eq "sausage.saltbank.org" and http.request.uri.path in {"/api/"} and http.referer ne "saltbank.org/bear") ~~or (not http.request.uri.path in {"/" "/api"})~~_
-   Hostname, URI Path, Referer
+3. Block (for)
+   sausage-maker-role(s) _(http.host eq "api.saltbank.org" and http.referer ne "sausage.saltbank.org") ~~or (not http.request.uri.path in {"/" "/api"})~~_
+   Hostname, Referer
 
-3. Block
-   lazy-grizzlies _(http.host eq "saltbank.org" and http.request.uri.path ne "/bear")_
+4. Block
+   pedestrian-grizzlies _(http.host eq "sausage.saltbank.org" and http.request.uri.path contains "/bear" and http.referer ne "sausage.saltbank.org")_
    Hostname, URI Path, Referer
 
 ([Referer requests hostname](https://markethistory.quora.com/Is-a-host-name-not-the-responding-URL-1)) ?:query
