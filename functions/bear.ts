@@ -79,11 +79,11 @@ export const onRequestPost: PagesFunction<{}> = async ({
   params
 }): Promise<Response> => {
   const request = new Request(r, {
+    redirect: "follow",
     headers: {
       //...r.headers,
       "Access-Control-Allow-Headers": "*",
-      Authorization: `Bearer ${env.CF_API_TOKEN}`,
-      redirect: "follow"
+      Authorization: `Bearer ${env.CF_API_TOKEN}`
     }
   });
   //return new Response("posted");
