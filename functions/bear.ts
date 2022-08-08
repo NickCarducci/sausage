@@ -81,13 +81,13 @@ export const onRequestPost: PagesFunction<{}> = async ({
   const request = new Request(r, {
     //headers: { Authorization: `bearer ${env.CF_API_TOKEN}` }
   });
-  //return new Response("posted");
+  return new Response("posted");
   //return await fetch(new Request("https://sausage.saltbank.org/api/", request));
-  try {
+  /*try {
     return await fetch("https://api.saltbank.org/");
   } catch (e) {
     return new Response(e, { status: 403, message: "bad subdomain" });
-  }
+  }*/
   //return await env.BANK.fetch(new Request("./api", r));//service binding N/A for now (8/2022)
   //.then(async (res) => await res.json())
   //.then((result) => JSON.stringify(result))
