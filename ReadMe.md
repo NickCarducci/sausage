@@ -25,11 +25,11 @@ deprecated: [eglue](https://github.com/NickCarducci/eglue/) on [mastercard-backb
    Hostname, URI Path
 
 3. Block (for)
-   sausage-maker-role(s) _(http.host eq "api.saltbank.org" and http.referer ne "https://sausage.saltbank.org/") ~~or (not http.request.uri.path in {"/" "/api"})~~_
+   sausage-maker-role(s) _(http.host eq "api.saltbank.org" and http.referer ne "\https://sausage.saltbank.org/") ~~or (not http.request.uri.path in {"/" "/api"})~~_
    Hostname, Referer
 
 4. Block
-   pedestrian-grizzlies _(http.host eq "sausage.saltbank.org" and http.request.uri.path contains "/bear" and http.referer ne "https://sausage.saltbank.org/")_
+   pedestrian-grizzlies _(http.host eq "sausage.saltbank.org" and http.request.uri.path contains "/bear" and http.referer ne "\https://sausage.saltbank.org/")_
    Hostname, URI Path, Referer
 
 ([Referer requests hostname](https://markethistory.quora.com/Is-a-host-name-not-the-responding-URL-1)) ?:query
@@ -44,7 +44,7 @@ deprecated: [eglue](https://github.com/NickCarducci/eglue/) on [mastercard-backb
    Always Use HTTPS (this is the only worker route)
 
 ~~2. saltbank.org/bear
-   Forwarding URL (Status Code: 302 - Temporary Redirect, Url: https://bear-relay.backbank.workers.dev/)~~ DO NOT forward here by page rule after referer firewall - workers can use environment variables but not WAFirewall.
+   Forwarding URL (Status Code: 302 - Temporary Redirect, Url: bear-relay.backbank.workers.dev/)~~ DO NOT forward here by page rule after referer firewall - workers can use environment variables but not WAFirewall.
 
 #### Page Environment variables [useless with frameworks](https://developers.cloudflare.com/pages/platform/build-configuration/):
 
