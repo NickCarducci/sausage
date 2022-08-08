@@ -59,7 +59,7 @@ export const onRequest: PagesFunction<{}> = async ({
 const optionPostal = async ({ request: r, env, params }): Promise<Response> => {
   const request = new Request(r, {
     headers: {
-      ...r.headers,
+      //...r.headers,
       Authorization: `bearer ${env.CF_API_TOKEN}`,
       redirect: "follow"
     }
@@ -70,7 +70,10 @@ const optionPostal = async ({ request: r, env, params }): Promise<Response> => {
       new Request("https://sausage.saltbank.org/api/", request)
     );
   } catch (e) {
-    return new Response(e, { status: 403, message: "bad subdomain" });
+    return new Response(e + " error", {
+      status: 403,
+      message: "bad subdomain"
+    });
   }
   /*return await fetch("https://api.saltbank.org/", {
     method: "POST",
