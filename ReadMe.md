@@ -25,11 +25,11 @@ deprecated: [eglue](https://github.com/NickCarducci/eglue/) on [mastercard-backb
    Hostname, URI Path
 
 3. Block (for)
-   sausage-maker-role(s) _(http.host eq "api.saltbank.org" and http.referer ne "\https://sausage.saltbank.org/") ~~or (not http.request.uri.path in {"/" "/api"})~~_
+   sausage-maker-role(s) _(http.host eq "api.saltbank.org" and http.referer ne "`https://sausage.saltbank.org/`") ~~or (not http.request.uri.path in {"/" "/api"})~~_
    Hostname, Referer
 
 4. Block
-   pedestrian-grizzlies _(http.host eq "sausage.saltbank.org" and http.request.uri.path contains "/bear" and http.referer ne "\https://sausage.saltbank.org/")_
+   pedestrian-grizzlies _(http.host eq "sausage.saltbank.org" and http.request.uri.path contains "/bear" and http.referer ne "`https://sausage.saltbank.org/`")_
    Hostname, URI Path, Referer
 
 ([Referer requests hostname](https://markethistory.quora.com/Is-a-host-name-not-the-responding-URL-1)) ?:query
