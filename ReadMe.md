@@ -23,7 +23,7 @@ deprecated: [eglue](https://github.com/NickCarducci/eglue/) on [mastercard-backb
    Hostname, URI Path
 
 3. Block (for)
-   sausage-maker-role(s) _(http.host eq "api.saltbank.org" and http.referer ne "sausage.saltbank.org") ~~or (not http.request.uri.path in {"/" "/api"})~~_
+   sausage-maker-role(s) _(http.host eq "api.saltbank.org" and not http.referer contains "sausage.saltbank.org") ~~or (not http.request.uri.path in {"/" "/api"})~~_
    Hostname, Referer
 
 4. Block
