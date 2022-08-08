@@ -8,6 +8,8 @@ Two services bound by a binding ARE REQUIRED to test bodacious requests using (c
 
 ## Cloudflare page (react framework) + service worker + service binding(s)
 
+### and are [so important if you want to call a service worker from pages functions](https://blog.cloudflare.com/building-full-stack-with-pages/)
+
 > **CRA fetch** [sausage.saltbank.org](https://sausage.pages.dev) alone refers to **JS SW fetch** [saltbank.org/bear](https://saltbank.org/bear) that refers to **rust** [sausage.saltbank.org/api](https://sausage.saltbank.org/api)
 
 deprecated: [eglue](https://github.com/NickCarducci/eglue/) on [mastercard-backbank.backbank.workers.dev](https://github.com/NickCarducci/mastercard-backbank)
