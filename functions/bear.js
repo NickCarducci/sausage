@@ -65,7 +65,7 @@ export async function onRequestOptions(context) {
 
 export async function onRequestPost({ request: r, env, params }) {
   const request = new Request(r, {
-    headers: { Authorization: `bearer ${env.CF_API_TOKEN}` }
+    //headers: { Authorization: `bearer ${env.CF_API_TOKEN}` }
   });
 
   return await fetch(new Request("https://sausage.saltbank.org/api/", request))
