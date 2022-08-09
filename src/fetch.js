@@ -1,5 +1,6 @@
 import React from "react";
 import { standardCatch } from "./App";
+//bad advice only lie endpoint
 //import bear from "../bear/index.js";
 //delete the following to use the object
 //web app firewall rules (clouflare)
@@ -34,7 +35,7 @@ export default class Fetch extends React.Component {
       //cors: "origin",
       headers: {
         //https://developers.cloudflare.com/workers/examples/cors-header-proxy/
-        //Origin: "https://i7l8qe.csb.app",
+        Origin: "https://sausage.saltbank.org",
         "Access-Control-Request-Headers": ["Allow", "Origin"]
         //"Referrer-Policy": "cross-origin",
         //https://developers.cloudflare.com/firewall/api/cf-firewall-rules/post/
