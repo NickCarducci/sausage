@@ -80,13 +80,15 @@ export const onRequestPost: PagesFunction<{}> = async ({
 }): Promise<Response> => {
   const request = new Request(r, {
     //method:"POST",
-    redirect: "follow",
-    headers: {
+    redirect: "follow"
+    /*headers: {
       //...r.headers,
       Authorization: `Bearer ${env.DUMMY}`, //CF_API_TOKEN
       "Content-Type": "application/json"
-    }
+    }*/
   });
+  request.headers.set("Authorization", `Bearer ${env.DUMMY}`); //CF_API_TOKEN
+  request.headers.set("Content-Type", "application/json");
   return new Response(JSON.stringify(request));
   //hunter can pay biden gift without income by discount and damage tax exemption
   //commodity has no living costs
