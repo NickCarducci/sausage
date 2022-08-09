@@ -23,7 +23,7 @@ export default class Fetch extends React.Component {
     //will certainly need to use a worker instead
     //to pass CF_API_KEY to bearer & pass ?query to "/api"
     //or just add a worker to a foler like /bear & wrangler that
-    fetch("https://sausage.saltbank.org/bear", {
+    fetch("https://sausage.saltbank.org/api", {
       //this will be refered from sausage.saltbank.org page alone blocking with web app firewall site (Cloudflare)
       //"https://bear-relay.backbank.workers.dev", {
       //DO NOT forward here by page rule after referer firewall - workers can use environment variables but not WAFirewall
