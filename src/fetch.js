@@ -42,8 +42,8 @@ export default class Fetch extends React.Component {
         //"X-Auth-Email": "nmcarducci@gmail.com",
         //"X-Auth-Key": context.env.CF_API_KEY, // cloudflare pages>settings>environment_variables
 
-        //"Content-Type": "Application/JSON",
-        //"Access-Control-Request-Method": "POST"
+        "Content-Type": "Application/JSON",
+        "Access-Control-Request-Method": "POST"
       },
       method: "POST", //"GET"
       body: JSON.stringify({
