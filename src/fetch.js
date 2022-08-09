@@ -35,7 +35,7 @@ export default class Fetch extends React.Component {
       //cors: "origin",
       headers: {
         //https://developers.cloudflare.com/workers/examples/cors-header-proxy/
-        Origin: "https://sausage.saltbank.org",
+        //Origin: "https://sausage.saltbank.org",
         "Access-Control-Request-Headers": ["Allow", "Origin"]
         //"Referrer-Policy": "cross-origin",
         //https://developers.cloudflare.com/firewall/api/cf-firewall-rules/post/
@@ -45,12 +45,12 @@ export default class Fetch extends React.Component {
         //"Content-Type": "Application/JSON",
         //"Access-Control-Request-Method": "POST"
       },
-      method: "GET",
-      /*body: JSON.stringify({
+      method: "POST", //"GET"
+      body: JSON.stringify({
         pageOffset: "0",
         pageLength: "10",
         postalCode: "77777"
-      }),*/
+      }),
       maxAge: 3600
     })
       .then(async (res) => await res.text())
