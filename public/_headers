@@ -1,2 +1,4 @@
 /bear
   Access-Control-Allow-Origin: https://sausage.saltbank.org
+/*
+  Access-Control-Allow-Origin: https://api.saltbank.org
