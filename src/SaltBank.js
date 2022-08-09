@@ -76,6 +76,39 @@ class SaltBank extends React.Component {
             <h4 {...setting(2)}>in kind tax exemptions for nonprofessionals</h4>
           </a>
           <br />
+          <div
+            style={{
+              width: "min-content",
+              minWidth: "150px",
+              color: "white",
+              backgroundColor: "rgba(20,20,20,.6)",
+              fontSize: "14px",
+              padding: "6px"
+            }}
+          >
+            <a
+              style={{ color: "white" }}
+              href="https://www.quora.com/unanswered/Is-a-politician-selling-his-office-when-he-is-a-dependent"
+            >
+              hunter can pay biden
+            </a>{" "}
+            gift without income by discount and damage tax exemption
+            <br />
+            commodity has no{" "}
+            <a
+              style={{ color: "white" }}
+              href="https://www.quora.com/If-my-income-were-1m-year-could-I-not-buy-a-home-office-with-it-tax-free"
+            >
+              living costs
+            </a>
+            . 3% under $2k/payday and{" "}
+            <a
+              style={{ color: "white" }}
+              href="https://truncatedproductiontax.quora.com"
+            >
+              transaction
+            </a>
+          </div>
           <a href="https://commie.dev">
             <h4 {...setting(3)}>depositary valorization</h4>
           </a>
