@@ -78,31 +78,39 @@ export const onRequestPost: PagesFunction<{}> = async ({
   env,
   params
 }): Promise<Response> => {
+  // Change just the host
+  const uri = "https://api.saltbank.org/";
+  const url = new URL(uri);
+
+  url.hostname = "api.saltbank.org";
   var request = new Request(r, {
-    //method:"POST",
-    redirect: "follow"
-    /*headers: {
+    method: "GET",
+    //credentials: "include",
+    redirect: "follow",
+    headers: {
       //...r.headers,
-      Authorization: `Bearer ${env.DUMMY}`, //CF_API_TOKEN
+      //credentials: "include",
+      //Authorization: `Bearer ${env.DUMMY}`, //CF_API_TOKEN
       "Content-Type": "application/json"
-    }*/
+    }
   });
-  request.headers.set("Authorization", `Bearer ${env.DUMMY}`); //CF_API_TOKEN
-  request.headers.set("Content-Type", "application/json");
-  return new Response(JSON.stringify(request));
+  //request.headers.set("Authorization", `Bearer ${env.DUMMY}`); //CF_API_TOKEN
+  //request.headers.set("Content-Type", "application/json");
+
+  //return new Response(JSON.stringify(request));
   //hunter can pay biden gift without income by discount and damage tax exemption
   //commodity has no living costs
   //3% under $2k/payday and transaction
   //return new Response("posted");
 
-  /*try {
-    return await fetch(new Request("https://api.saltbank.org/", request));
+  try {
+    return await fetch(new Request(url.toString(), request));
   } catch (e) {
     return new Response(e + " error", {
       status: 403,
       message: "bad subdomain"
     });
-  }*/
+  }
 
   /*return await fetch("https://api.saltbank.org/", {
     method: "POST",
