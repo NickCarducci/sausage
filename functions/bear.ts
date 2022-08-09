@@ -83,17 +83,19 @@ export const onRequestPost: PagesFunction<{}> = async ({
   const url = new URL(uri);
 
   url.hostname = "api.saltbank.org";
-  var request = new Request(r, {
+  var request = new Request(
+    r /*, {
     method: "GET",
     //credentials: "include",
-    redirect: "follow",
+    //redirect: "follow",
     headers: {
       //...r.headers,
       //credentials: "include",
       //Authorization: `Bearer ${env.DUMMY}`, //CF_API_TOKEN
       "Content-Type": "application/json"
     }
-  });
+  }*/
+  );
   //request.headers.set("Authorization", `Bearer ${env.DUMMY}`); //CF_API_TOKEN
   //request.headers.set("Content-Type", "application/json");
 
