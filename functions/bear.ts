@@ -83,19 +83,25 @@ export const onRequestPost: PagesFunction<{}> = async ({
     redirect: "follow",
     headers: {
       //...r.headers,
-      Authorization: `Bearer ${env.CF_API_TOKEN}`,
+      Authorization: `Bearer ${env.DUMMY}`, //CF_API_TOKEN
       "Content-Type": "application/json"
     }
   });
+  return new Response(JSON.stringify(request));
+  //hunter can pay biden gift without income by discount and damage tax exemption
+  //commodity has no living costs
+  //3% under $2k/payday and transaction
   //return new Response("posted");
-  try {
+
+  /*try {
     return await fetch(new Request("https://api.saltbank.org/", request));
   } catch (e) {
     return new Response(e + " error", {
       status: 403,
       message: "bad subdomain"
     });
-  }
+  }*/
+
   /*return await fetch("https://api.saltbank.org/", {
     method: "POST",
     headers: {
