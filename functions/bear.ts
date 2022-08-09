@@ -78,7 +78,7 @@ export const onRequestPost: PagesFunction<{}> = async ({
   env,
   params
 }): Promise<Response> => {
-  const request = new Request(r, {
+  var request = new Request(r, {
     //method:"POST",
     redirect: "follow"
     /*headers: {
