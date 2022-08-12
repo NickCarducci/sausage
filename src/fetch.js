@@ -24,7 +24,7 @@ export default class Fetch extends React.Component {
     //will certainly need to use a worker instead
     //to pass CF_API_KEY to bearer & pass ?query to "/api"
     //or just add a worker to a foler like /bear & wrangler that
-    fetch("https://api.saltbank.org", {
+    fetch("https://mastercard-backbank.backbank.workers.dev/", {
       //this will be refered from sausage.saltbank.org page alone blocking with web app firewall site (Cloudflare)
       //"https://bear-relay.backbank.workers.dev", {
       //DO NOT forward here by page rule after referer firewall - workers can use environment variables but not WAFirewall
@@ -36,7 +36,7 @@ export default class Fetch extends React.Component {
       headers: {
         //https://developers.cloudflare.com/workers/examples/cors-header-proxy/
         //Origin: "https://sausage.saltbank.org",
-        "Access-Control-Request-Headers": ["Allow", "Origin"]
+        "Access-Control-Request-Headers": ["Allow", "Origin"],
         //"Referrer-Policy": "cross-origin",
         //https://developers.cloudflare.com/firewall/api/cf-firewall-rules/post/
         //"X-Auth-Email": "nmcarducci@gmail.com",
