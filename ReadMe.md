@@ -1,4 +1,4 @@
-This is a project for an api sandbox that makes use of page as well as firewall rules from cloudflare.
+This is a [project](https://community.cloudflare.com/t/using-authorization-credential-bearer-in-lieu-of-same-origin/409702) for an api sandbox that makes use of page as well as firewall rules from cloudflare.
 
 Two services bound by a binding ARE REQUIRED to test bodacious requests using (cloudflare service) workers>settings>variables && (firebase) authentication, (bear) bearer and api endpoints, and will probably be suited by postman the same as this react framework + firebase implementation.
 
