@@ -155,7 +155,7 @@ class PathRouter extends React.Component {
                         <Bear ref={{ current: { bear: this.bf } }} />
                       ) :*/ (
                         //delete for deploy
-                        !(
+                        (
                           window.location.href.includes(
                             "sausage.saltbank.org"
                           ) || window.location.href.includes("i7l8qe.csb.app")
