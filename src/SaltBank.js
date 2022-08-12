@@ -76,11 +76,16 @@ class SaltBank extends React.Component {
             <h4 {...setting(2)}>in kind tax exemptions for nonprofessionals</h4>
           </a>
           <br />
-          Keynes claims production by credit (IS-LM)
-          <br />
-          Marx claims such trust is not a commerce
-          <br />
-          Long term unemployment, juicy
+          <span>
+            Keynes claims production by credit (IS-LM)
+            <br />
+            Marx claims such trust is{" "}
+            <a href="https://www.quora.com/unanswered/Is-the-Affordable-Care-Act-subsidy-spent-only-on-select-units">
+              not a commerce
+            </a>
+            <br />
+            Long term unemployment, juicy
+          </span>
           <br />
           <div
             style={{
