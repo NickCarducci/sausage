@@ -76,21 +76,10 @@ class SaltBank extends React.Component {
             <h4 {...setting(2)}>in kind tax exemptions for nonprofessionals</h4>
           </a>
           <br />
-          <span>
-            Keynes claims production by credit (IS-LM)
-            <br />
-            Marx claims such trust is{" "}
-            <a href="https://www.quora.com/unanswered/Is-the-Affordable-Care-Act-subsidy-spent-only-on-select-units">
-              not a commerce
-            </a>
-            <br />
-            Long term unemployment, juicy
-          </span>
-          <br />
           <div
             style={{
               width: "min-content",
-              minWidth: "150px",
+              minWidth: "170px",
               color: "white",
               backgroundColor: "rgba(20,20,20,.6)",
               fontSize: "14px",
@@ -103,7 +92,24 @@ class SaltBank extends React.Component {
             >
               hunter can pay biden
             </a>{" "}
-            gift without income by discount and damage tax exemption
+            <span
+              style={{
+                color: "rgb(130,180,130)",
+                textDecoration: "line-through"
+              }}
+            >
+              tax on bartenders and beauticians
+            </span>{" "}
+            gift friend and family without taxes but for gift as discount and
+            damage{" "}
+            <a
+              style={{
+                color: "rgb(230,180,180)"
+              }}
+              href="https://www.quora.com/unanswered/To-allow-gifts-to-be-tax-free-should-gifts-be-exclusively-without-discounted-sales"
+            >
+              tax exemption
+            </a>
             <br />
             commodity has no{" "}
             <a
@@ -112,12 +118,14 @@ class SaltBank extends React.Component {
             >
               living costs
             </a>
-            . 3% under $2k/payday and{" "}
+            . 3% under{" "}
             <a
-              style={{ color: "white" }}
+              style={{
+                color: "rgb(130,180,200)"
+              }}
               href="https://truncatedproductiontax.quora.com"
             >
-              transaction
+              $2k/ payday and transaction
             </a>
           </div>
           <a href="https://commie.dev">
