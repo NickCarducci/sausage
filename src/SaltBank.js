@@ -66,7 +66,12 @@ class SaltBank extends React.Component {
             alignItems: "center"
           }}
         >
-          <h1 {...setting(0)}>Salt</h1>
+          <h1 {...setting(0)}>
+            Salt{" "}
+            <span style={{ fontSize: "15px" }}>
+              (n) revenge, non-rhetorical nor acidic
+            </span>
+          </h1>
           <br />
           <a href="https://truncatedwholesaletax.com">
             <h4 {...setting(1)}>geohash spoofable foreign intervention</h4>
