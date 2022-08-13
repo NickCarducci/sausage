@@ -29,8 +29,13 @@ export default class Fetch extends React.Component {
       pageLength: "10",
       postalCode: "77777"
     };*/
+    /*
+    Access to fetch at 'https://api.saltbank.org/' from origin 'https://sausage.saltbank.org' 
+    has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the 
+    requested resource. If an opaque response serves your needs, what the f r u doing
+    */
     fetch(
-      "https://api.saltbank.org/",
+      "https://api.saltbank.org",
       /*"https://api.saltbank.org/?" +
         Object.keys(body)
           .map((k) => k + "=" + body[k])
