@@ -24,11 +24,11 @@ export default class Fetch extends React.Component {
     //will certainly need to use a worker instead
     //to pass CF_API_KEY to bearer & pass ?query to "/api"
     //or just add a worker to a foler like /bear & wrangler that
-    const body = JSON.stringify({
+    const body = /*JSON.stringify() */ {
       pageOffset: "0",
       pageLength: "10",
       postalCode: "77777"
-    });
+    };
     fetch(
       "https://api.saltbank.org/" +
         Object.keys(body)
