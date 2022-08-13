@@ -5,6 +5,7 @@ import { CSSTransition, TransitionGroup } from "react-transition-group";
 import { UAParser } from "ua-parser-js";
 import App from "./App";
 //import Bear from "../functions/bear/[[path]].js";
+import SaltBank from "./SaltBank";
 
 var check = null;
 class PathRouter extends React.Component {
@@ -32,59 +33,33 @@ class PathRouter extends React.Component {
         //window.addEventListener("scroll", this.scroll);
         this.checkInstall(true);
         window.FontAwesomeConfig = { autoReplaceSvg: "nest" };
-        window.addEventListener("scroll", this.scroll);
       }
     );
   };
   componentWillUnmount = () => {
     clearInterval(check);
     window.removeEventListener("resize", this.resize);
-    window.removeEventListener("scroll", this.scroll);
+    //window.removeEventListener("scroll", this.scroll);
     window.removeEventListener("beforeinstallprompt", this.beforeinstallprompt);
     window.removeEventListener("appinstalled", this.afterinstallation);
     this.matchMedia &&
       this.matchMedia.removeEventListener("change", this.installChange);
   };
   resize = () =>
-    this.setState(
-      {
-        width: this.state.ios ? window.screen.availWidth : window.innerWidth,
-        availableHeight: this.state.ios
-          ? window.screen.availHeight - 20
-          : window.innerHeight - 30
-      },
-      () => this.scroll()
-    );
+    this.setState({
+      width: this.state.ios ? window.screen.availWidth : window.innerWidth,
+      availableHeight: this.state.ios
+        ? window.screen.availHeight - 20
+        : window.innerHeight
+    });
 
-  scroll = () => {
+  /*scroll = () => {
     const w = !this.matchMedia ? window.screen.availWidth : window.innerWidth;
-    this.setState(
-      {
-        width:
-          window.innerHeight - window.document.body.offsetHeight < 0
-            ? w - 16
-            : w,
-        onscroll:
-          //window.scrollY < 2 ||
-          window.document.body.scrollHeight -
-            window.document.body.clientHeight >
-          50
-      },
-      () => {
-        clearTimeout(this.timey);
-        this.timey = setTimeout(
-          () =>
-            this.setState({
-              onscroll:
-                window.document.body.scrollHeight -
-                  window.document.body.clientHeight >
-                50
-            }),
-          200
-        );
-      }
-    );
-  };
+    this.setState({
+      width:
+        window.innerHeight - window.document.body.offsetHeight < 0 ? w - 16 : w
+    });
+  };*/
   // Initialize deferredPrompt for use later to show browser install prompt.
   beforeinstallprompt = (e) => {
     // Prevent the mini-infobar from appearing on mobile
@@ -175,40 +150,56 @@ class PathRouter extends React.Component {
               <CSSTransition key="11" timeout={300} classNames={"fade"}>
                 <Switch key={location.key} location={location}>
                   <Route
-                    render={(props) => (
-                      <App
-                        unmountFirebase={this.state.unmountFirebase}
-                        showPWAprompt={showPWAprompt}
-                        apple={!this.matchMedia}
-                        appHeight={availableHeight}
-                        width={width}
-                        history={history}
-                        pathname={location.pathname}
-                        statePathname={this.state.statePathname}
-                        location={location}
-                        closeWebAppPrompt={() =>
-                          this.setState({ showPWAprompt: false })
-                        }
-                        addToHomescreen={async () => {
-                          this.setState({ showPWAprompt: false });
-                          if (!this.deferredPrompt) {
-                            window.alert(
-                              "for iOS, you must use their browser option, 'add to homescreen' " +
-                                "instead of providing web-developers beforeinstallprompt appinstalled"
-                            );
-                          } else {
-                            this.deferredPrompt.prompt();
-                            const { outcome } = await this.deferredPrompt
-                              .userChoice;
-                            console.log(outcome);
-                            // the prompt can't be used again so, throw it away
-                            this.deferredPrompt = null;
+                    render={(props) =>
+                      /*this.props.history === "/bear" ? (
+                        <Bear ref={{ current: { bear: this.bf } }} />
+                      ) :*/ (
+                        //delete for deploy
+                        (
+                          window.location.href.includes(
+                            "sausage.saltbank.org"
+                          ) || window.location.href.includes("i7l8qe.csb.app")
+                        )
+                      ) ? (
+                        <App
+                          unmountFirebase={this.state.unmountFirebase}
+                          showPWAprompt={showPWAprompt}
+                          apple={!this.matchMedia}
+                          appHeight={availableHeight}
+                          width={width}
+                          history={history}
+                          pathname={location.pathname}
+                          statePathname={this.state.statePathname}
+                          location={location}
+                          closeWebAppPrompt={() =>
+                            this.setState({ showPWAprompt: false })
                           }
-                        }}
-                        //functions={{ bear: this.bf.current.onclick }}
-                        onscroll={this.state.onscroll}
-                      />
-                    )}
+                          addToHomescreen={async () => {
+                            this.setState({ showPWAprompt: false });
+                            if (!this.deferredPrompt) {
+                              window.alert(
+                                "for iOS, you must use their browser option, 'add to homescreen' " +
+                                  "instead of providing web-developers beforeinstallprompt appinstalled"
+                              );
+                            } else {
+                              this.deferredPrompt.prompt();
+                              const { outcome } = await this.deferredPrompt
+                                .userChoice;
+                              console.log(outcome);
+                              // the prompt can't be used again so, throw it away
+                              this.deferredPrompt = null;
+                            }
+                          }}
+                          //functions={{ bear: this.bf.current.onclick }}
+                        />
+                      ) : (
+                        <SaltBank
+                          lastPath={this.state.lastPathname}
+                          pathname={this.state.pathname}
+                          history={this.state.history}
+                        />
+                      )
+                    }
                   />
                 </Switch>
               </CSSTransition>
