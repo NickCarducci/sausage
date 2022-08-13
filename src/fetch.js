@@ -24,35 +24,48 @@ export default class Fetch extends React.Component {
     //will certainly need to use a worker instead
     //to pass CF_API_KEY to bearer & pass ?query to "/api"
     //or just add a worker to a foler like /bear & wrangler that
-    fetch("https://mastercard-backbank.backbank.workers.dev/", {
-      //this will be refered from sausage.saltbank.org page alone blocking with web app firewall site (Cloudflare)
-      //"https://bear-relay.backbank.workers.dev", {
-      //DO NOT forward here by page rule after referer firewall - workers can use environment variables but not WAFirewall
-      //then the actual host and path sausage.saltbank.org/api from such the same referer may be called
-      //USE BEAR PATH relay
-      //mastercard-backbank.backbank.workers.dev
-      //origin: true,
-      //cors: "origin",
-      headers: {
-        //https://developers.cloudflare.com/workers/examples/cors-header-proxy/
-        //Origin: "https://sausage.saltbank.org",
-        "Access-Control-Request-Headers": ["Allow", "Origin"],
-        //"Referrer-Policy": "cross-origin",
-        //https://developers.cloudflare.com/firewall/api/cf-firewall-rules/post/
-        //"X-Auth-Email": "nmcarducci@gmail.com",
-        //"X-Auth-Key": context.env.CF_API_KEY, // cloudflare pages>settings>environment_variables
+    const body = JSON.stringify({
+      pageOffset: "0",
+      pageLength: "10",
+      postalCode: "77777"
+    });
+    fetch(
+      "https://api.saltbank.org/" +
+        Object.keys(body)
+          .map((k) => k + "=" + body[k])
+          .join("&"),
+      {
+        //"https://mastercard-backbank.backbank.workers.dev/"
+        //this will be refered from sausage.saltbank.org page alone blocking with web app firewall site (Cloudflare)
+        //"https://bear-relay.backbank.workers.dev", {
+        //DO NOT forward here by page rule after referer firewall - workers can use environment variables but not WAFirewall
+        //then the actual host and path sausage.saltbank.org/api from such the same referer may be called
+        //USE BEAR PATH relay
+        //mastercard-backbank.backbank.workers.dev
+        //origin: true,
+        //cors: "origin",
+        headers: {
+          //https://developers.cloudflare.com/workers/examples/cors-header-proxy/
+          //Origin: "https://sausage.saltbank.org",
+          "Access-Control-Request-Headers": ["Allow", "Origin"]
+          //"Referrer-Policy": "cross-origin",
+          //https://developers.cloudflare.com/firewall/api/cf-firewall-rules/post/
+          //"X-Auth-Email": "nmcarducci@gmail.com",
+          //"X-Auth-Key": context.env.CF_API_KEY, // cloudflare pages>settings>environment_variables
 
-        "Content-Type": "Application/JSON",
-        "Access-Control-Request-Method": "POST"
-      },
-      method: "POST", //"GET"
+          //"Content-Type": "Application/JSON",
+          //"Access-Control-Request-Method": "POST" //https://community.cloudflare.com/t/how-to-call-api-using-cloudflare/408641
+          //GET + ?query requests only before service bindings via Wranlger 2
+        },
+        /*method: "POST", //"GET"
       body: JSON.stringify({
         pageOffset: "0",
         pageLength: "10",
         postalCode: "77777"
-      }),
-      maxAge: 3600
-    })
+      }),*/
+        maxAge: 3600
+      }
+    )
       .then(async (res) => await res.text())
       .then((result) => {
         console.log(result);
