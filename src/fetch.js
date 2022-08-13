@@ -30,7 +30,7 @@ export default class Fetch extends React.Component {
       postalCode: "77777"
     };
     fetch(
-      "https://api.saltbank.org/" +
+      "https://api.saltbank.org/?" +
         Object.keys(body)
           .map((k) => k + "=" + body[k])
           .join("&"),
