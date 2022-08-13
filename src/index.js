@@ -33,33 +33,54 @@ class PathRouter extends React.Component {
         //window.addEventListener("scroll", this.scroll);
         this.checkInstall(true);
         window.FontAwesomeConfig = { autoReplaceSvg: "nest" };
+        window.addEventListener("scroll", this.scroll);
       }
     );
   };
   componentWillUnmount = () => {
     clearInterval(check);
     window.removeEventListener("resize", this.resize);
-    //window.removeEventListener("scroll", this.scroll);
+    window.removeEventListener("scroll", this.scroll);
     window.removeEventListener("beforeinstallprompt", this.beforeinstallprompt);
     window.removeEventListener("appinstalled", this.afterinstallation);
     this.matchMedia &&
       this.matchMedia.removeEventListener("change", this.installChange);
   };
   resize = () =>
-    this.setState({
-      width: this.state.ios ? window.screen.availWidth : window.innerWidth,
-      availableHeight: this.state.ios
-        ? window.screen.availHeight - 20
-        : window.innerHeight
-    });
+    this.setState(
+      {
+        width: this.state.ios ? window.screen.availWidth : window.innerWidth,
+        availableHeight: this.state.ios
+          ? window.screen.availHeight - 20
+          : window.innerHeight
+      },
+      () => this.scroll()
+    );
 
-  /*scroll = () => {
+  scroll = () => {
     const w = !this.matchMedia ? window.screen.availWidth : window.innerWidth;
-    this.setState({
-      width:
-        window.innerHeight - window.document.body.offsetHeight < 0 ? w - 16 : w
-    });
-  };*/
+    this.setState(
+      {
+        width:
+          window.innerHeight - window.document.body.offsetHeight < 0
+            ? w - 16
+            : w
+      },
+      () => {
+        clearTimeout(this.timey);
+        this.timey = setTimeout(
+          () =>
+            this.setState({
+              onscroll:
+                window.document.body.scrollHeight -
+                  window.document.body.clientHeight >
+                50
+            }),
+          200
+        );
+      }
+    );
+  };
   // Initialize deferredPrompt for use later to show browser install prompt.
   beforeinstallprompt = (e) => {
     // Prevent the mini-infobar from appearing on mobile
@@ -142,6 +163,7 @@ class PathRouter extends React.Component {
             <TransitionGroup
               key="1"
               style={{
+                backgroundColor: "rgb(200, 230, 240)",
                 width: "100%",
                 transition: ".3s ease-in",
                 minHeight: availableHeight ? availableHeight : "100%"
@@ -150,16 +172,14 @@ class PathRouter extends React.Component {
               <CSSTransition key="11" timeout={300} classNames={"fade"}>
                 <Switch key={location.key} location={location}>
                   <Route
-                    render={(props) =>
+                    render={(
+                      props //delete for deploy
+                    ) =>
                       /*this.props.history === "/bear" ? (
                         <Bear ref={{ current: { bear: this.bf } }} />
-                      ) :*/ (
-                        //delete for deploy
-                        (
-                          window.location.href.includes(
-                            "sausage.saltbank.org"
-                          ) || window.location.href.includes("i7l8qe.csb.app")
-                        )
+                      ) :*/ !(
+                        window.location.href.includes("sausage.saltbank.org") ||
+                        window.location.href.includes("i7l8qe.csb.app")
                       ) ? (
                         <App
                           unmountFirebase={this.state.unmountFirebase}
@@ -194,6 +214,7 @@ class PathRouter extends React.Component {
                         />
                       ) : (
                         <SaltBank
+                          onscroll={this.state.onscroll}
                           lastPath={this.state.lastPathname}
                           pathname={this.state.pathname}
                           history={this.state.history}
