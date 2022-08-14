@@ -50,7 +50,8 @@ class SaltBank extends React.Component {
         <div
           style={{
             position: "relative",
-            top: "0px"
+            top: "0px",
+            marginTop: "30px"
           }}
         >
           <a
@@ -196,6 +197,16 @@ class SaltBank extends React.Component {
               <h4 {...setting2(9)}>tort embezzlement reform</h4>
             </a>
           </div>
+        </div>
+        <div
+          style={{
+            position: "fixed",
+            //alignSelf: "start",
+            bottom: "3px",
+            right: "5px"
+          }}
+        >
+          no <a href="https://realvelocity.asia">capitalization</a>
         </div>
       </div>
     );
