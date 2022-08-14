@@ -177,7 +177,7 @@ class PathRouter extends React.Component {
                     ) =>
                       /*this.props.history === "/bear" ? (
                         <Bear ref={{ current: { bear: this.bf } }} />
-                      ) :*/ !(
+                      ) :*/ (
                         window.location.href.includes("sausage.saltbank.org") ||
                         window.location.href.includes("i7l8qe.csb.app")
                       ) ? (
