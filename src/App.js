@@ -8,7 +8,7 @@ import "react-phone-number-input/style.css";
 import "./styles.css";
 import Fetch from "./fetch";
 import Customs from "./Customs.js";
-
+//cannot stop deranged from subsidy by industry specific visa exclusionary fixed free semiconductor existing business solar assuage "asiduously naive selfish calling for death of republicans more than democrats, irredeemable recention"
 export const standardCatch = (err) => console.log(err.message);
 export const arrayMessage = (message) =>
   message
@@ -587,13 +587,21 @@ class App extends React.Component {
           }}
           logoutofapp={logoutofapp} //rendered function
         />
-        <hr
-          style={{
-            width: "80%",
-            height: "1px",
-            backgroundColor: "white"
-          }}
-        />
+        <div style={{ textAlign: "right", width: "80%" }}>
+          <a
+            href="https://saltbank.org"
+            style={{ color: "rgb(230, 230, 170)", textDecoration: "none" }}
+          >
+            HOME
+          </a>
+          <hr
+            style={{
+              width: "100%",
+              height: "1px",
+              backgroundColor: "white"
+            }}
+          />
+        </div>
         <div>
           <h1 style={{ color: "rgb(230, 230, 170)" }}>Sausage.vau.money</h1>
           <h2>api sandbox</h2>
