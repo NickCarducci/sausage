@@ -55,6 +55,18 @@ class SaltBank extends React.Component {
           }}
         >
           <a
+            href="https://vaults.biz/party"
+            {...setting(8, {
+              color: "black",
+              textDecoration: "none",
+              position: "fixed",
+              left: "30px",
+              top: "40px"
+            })}
+          >
+            vaults.biz
+          </a>
+          <a
             {...setting(8, {
               textDecoration: "none",
               position: "fixed",
