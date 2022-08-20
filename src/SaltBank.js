@@ -41,6 +41,7 @@ class SaltBank extends React.Component {
           display: "flex",
           flexDirection: "column",
           justifyContent: this.props.onscroll ? "start" : "space-around",
+          maxheight: "min-content",
           height: "calc(100vh - 0px)",
           fontFamily: "sans-serif",
           textAlign: "center",
@@ -180,6 +181,12 @@ class SaltBank extends React.Component {
             <a href="https://rolloverinsurance.quora.com">
               <h4 {...setting(7)}>direct or exclusion</h4>
             </a>
+
+            <br />
+            <a href="https://minimalviableduress.quora.com/">
+              <h4 {...setting(11)}>minimal viable duress</h4>
+            </a>
+
             <br />
             <div
               style={{
