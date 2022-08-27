@@ -74,6 +74,18 @@ class SaltBank extends React.Component {
               textDecoration: "none",
               position: "fixed",
               left: "30px",
+              bottom: "80px"
+            })}
+          >
+            saverparty.xyz/global
+          </a>
+          <a
+            href="https://commie.dev"
+            {...setting(8, {
+              color: "black",
+              textDecoration: "none",
+              position: "fixed",
+              left: "30px",
               bottom: "40px"
             })}
           >
@@ -103,6 +115,7 @@ class SaltBank extends React.Component {
                 (n) revenge, non-rhetorical nor acidic
               </span>
             </h1>
+            <h4 {...setting(3)}>depositary valorization by exchange</h4>
             <br />
             <a href="https://truncatedwholesaletax.com">
               <h4 {...setting(1)}>geohash spoofable foreign intervention</h4>
@@ -166,9 +179,6 @@ class SaltBank extends React.Component {
                 $2k/ payday and transaction
               </a>
             </div>
-            <a href="https://commie.dev">
-              <h4 {...setting(3)}>depositary valorization</h4>
-            </a>
             <br />
             <a href="https://scopebook.quora.com">
               <h4 {...setting(4)}>timeclock unlock</h4>
