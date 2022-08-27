@@ -68,6 +68,18 @@ class SaltBank extends React.Component {
             vaults.biz
           </a>
           <a
+            href="https://realecon.quora.com/Are-there-serious-economists-who-dispute-the-Laffer-curve-1"
+            {...setting(8, {
+              color: "black",
+              textDecoration: "none",
+              position: "fixed",
+              left: "30px",
+              bottom: "40px"
+            })}
+          >
+            durable goods tax
+          </a>
+          <a
             {...setting(8, {
               textDecoration: "none",
               position: "fixed",
