@@ -34,15 +34,17 @@ class SaltBank extends React.Component {
         onMouseLeave: () => this.setState({ ["hoverin" + n]: false })
       };
     };
+    //https://www.quora.com/What-is-the-cause-of-inequality-in-competitive-markets/answer/Nick-Carducci
+    //reverse amortization
     return (
       <div
         style={{
           transition: ".3s ease-in",
           display: "flex",
           flexDirection: "column",
-          justifyContent: this.props.onscroll ? "start" : "space-around",
+          justifyContent: this.props.onscroll ? "flex-start" : "space-around",
           maxheight: "min-content",
-          height: "calc(100vh - 0px)",
+          height: "calc(100% - 0px)",
           fontFamily: "sans-serif",
           textAlign: "center",
           alignItems: "center"
