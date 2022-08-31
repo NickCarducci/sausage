@@ -518,7 +518,7 @@ class App extends React.Component {
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-around",
-          height: "100vh",
+          height: "100%",
           margin: "auto",
           fontFamily: "sans-serif",
           textAlign: "center",
