@@ -139,11 +139,13 @@ class SaltBank extends React.Component {
                 padding: "6px"
               }}
             >
-              <a
-                style={{ color: "white" }}
-                href="https://www.quora.com/unanswered/Is-a-politician-selling-his-office-when-he-is-a-dependent"
-              >
-                hunter can pay biden
+              Isn’t foreign agent registration only required for cases of
+              racketeering anyway? Is the incompetence to stand trial the issue
+              of racketeering? Is Hunter Biden not only{" "}
+              <a href="https://teapharmacy.party">guilty for smoking crack</a>{" "}
+              and <a href="https://asyluminportugal.quora.com">owning a</a> gun?{" "}
+              <a style={{ color: "white" }} href="https://thetax.party">
+                Hunter can pay biden
               </a>{" "}
               <span
                 style={{
@@ -153,8 +155,14 @@ class SaltBank extends React.Component {
               >
                 tax on bartenders and beauticians
               </span>{" "}
-              gift friend and family without taxes but for gift as discount and
-              damage{" "}
+              gift{" "}
+              <a
+                style={{ color: "white" }}
+                href="https://www.quora.com/unanswered/Is-a-politician-selling-his-office-when-he-is-a-dependent"
+              >
+                friend and family
+              </a>{" "}
+              without taxes but for gift as discount and damage{" "}
               <a
                 style={{
                   color: "rgb(230,180,180)"
