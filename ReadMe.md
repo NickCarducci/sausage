@@ -1,4 +1,6 @@
-# Sausage react-local-firebase
+# Sausage react-local-firebase [Rust service worker](https://codesandbox.io/s/react-local-firebase-i7l8qe)
+
+## Example API UI for react-local-firebase (edge serverse cannot use body POST..)
 
 > [Google cloud run endpoint (extensible) service proxy api gateway firebase token](https://stackoverflow.com/questions/73674814/google-cloud-run-endpoint-extensible-service-proxy-api-gateway-firebase-token)
 
@@ -41,10 +43,6 @@ deprecated: [eglue](https://github.com/NickCarducci/eglue/) on [mastercard-backb
    Hostname, URI Path, Referer
 
 ([Referer requests hostname](https://markethistory.quora.com/Is-a-host-name-not-the-responding-URL-1)) ?:query
-
-## Example API UI for react-local-firebase
-
-[Rust service worker](https://codesandbox.io/s/react-local-firebase-i7l8qe)
 
 #### Page rules:
 
