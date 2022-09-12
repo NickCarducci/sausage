@@ -1,6 +1,6 @@
 # Sausage react-local-firebase [Rust service worker](https://codesandbox.io/s/react-local-firebase-i7l8qe)
 
-## Example API UI for react-local-firebase (edge serverse cannot use body POST..)
+## Example API UI for react-local-firebase (CF edge servers cannot use body POST..)
 
 > [Google cloud run endpoint (extensible) service proxy api gateway firebase token](https://stackoverflow.com/questions/73674814/google-cloud-run-endpoint-extensible-service-proxy-api-gateway-firebase-token)
 
