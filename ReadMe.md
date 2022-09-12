@@ -1,4 +1,12 @@
-This is a [project](https://community.cloudflare.com/t/using-authorization-credential-bearer-in-lieu-of-same-origin/409702) for an api sandbox that makes use of page as well as firewall rules from cloudflare.
+# Sausage react-local-firebase
+
+> [Google cloud run endpoint (extensible) service proxy api gateway firebase token](https://stackoverflow.com/questions/73674814/google-cloud-run-endpoint-extensible-service-proxy-api-gateway-firebase-token)
+
+#### [mastercard-backbank-node-cloud-run](https://github.com/NickCarducci/mastercard-backbank-node-cloud-run)
+
+\_
+
+This is a project for an api sandbox that makes use of page as well as firewall rules from cloudflare.
 
 Two services bound by a binding ARE REQUIRED to test bodacious requests using (cloudflare service) workers>settings>variables && (firebase) authentication, (bear) bearer and api endpoints, and will probably be suited by postman the same as this react framework + firebase implementation.
 
@@ -44,8 +52,9 @@ deprecated: [eglue](https://github.com/NickCarducci/eglue/) on [mastercard-backb
    Always Use HTTPS (this is the only worker route)
 
 ~~2. saltbank.org/bear
-   Forwarding URL (Status Code: 302 - Temporary Redirect, Url: bear-relay.backbank.workers.dev/)~~ DO NOT forward here by page rule after referer firewall - workers can use environment variables but not WAFirewall.
+Forwarding URL (Status Code: 302 - Temporary Redirect, Url: bear-relay.backbank.workers.dev/)~~ DO NOT forward here by page rule after referer firewall - workers can use environment variables but not WAFirewall.
 
 #### Page Environment variables [useless with frameworks](https://developers.cloudflare.com/pages/platform/build-configuration/):
 
 [connect workers](https://github.com/jkup/cloudflare-docs/blob/14fb6a44328da68981121edee29e15abbe19e3c7/products/workers/src/content/cli-wrangler/commands.md) **_after_ deploying your page as a site**.
+
