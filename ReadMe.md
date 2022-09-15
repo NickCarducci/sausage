@@ -8,7 +8,7 @@
 
 > This tool helps you modernize Linux and Windows workloads from workloads running on virtual machines to a set of artifacts which can run as containers on GKE or Anthos Clusters. The tool will help you create workload container artifacts such as Docker file, Docker image and deployment spec that are used for running containers and [invoking "day2" operations](https://console.cloud.google.com/kubernetes/migrate/migrations?project=vaumoney).
 
-[Kubernetes Engine: Migrate to Containers](https://cloud.google.com/migrate/containers)
+[Kubernetes Engine: Stop Instances and Migrate to Containers](https://cloud.google.com/migrate/containers)
 
 ### [current](https://codesandbox.io/s/hibit-cc-eo2nhf)
 
