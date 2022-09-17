@@ -1,6 +1,6 @@
 # Sausage react-local-firebase [Rust service worker](https://codesandbox.io/s/react-local-firebase-i7l8qe)
 
-## Example API UI for react-local-firebase (CF edge servers cannot use body POST..)
+## Example API UI for react-local-firebase (CF edge servers cannot use body [POST](https://github.com/NickCarducci/worker_fetch)..)
 
 > [Google cloud run endpoint (extensible) service proxy api gateway firebase token](https://stackoverflow.com/questions/73674814/google-cloud-run-endpoint-extensible-service-proxy-api-gateway-firebase-token)
 
@@ -61,3 +61,4 @@ Forwarding URL (Status Code: 302 - Temporary Redirect, Url: bear-relay.backbank.
 #### Page Environment variables [useless with frameworks](https://developers.cloudflare.com/pages/platform/build-configuration/):
 
 [connect workers](https://github.com/jkup/cloudflare-docs/blob/14fb6a44328da68981121edee29e15abbe19e3c7/products/workers/src/content/cli-wrangler/commands.md) **_after_ deploying your page as a site**.
+
