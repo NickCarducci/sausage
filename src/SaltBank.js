@@ -58,7 +58,7 @@ class SaltBank extends React.Component {
           }}
         >
           <a
-            href="https://vaults.biz/party"
+            href="https://vau.money"
             {...setting(8, {
               color: "black",
               textDecoration: "none",
@@ -67,7 +67,7 @@ class SaltBank extends React.Component {
               top: "40px"
             })}
           >
-            vaults.biz
+            vau.money
           </a>
           <a
             href="https://realecon.quora.com/Are-there-serious-economists-who-dispute-the-Laffer-curve-1"
@@ -258,6 +258,10 @@ class SaltBank extends React.Component {
           }}
         >
           no <a href="https://realvelocity.asia">capitalization</a>
+          <br />(<a href="https://stocktwits.com/nmc123">Valuation</a>): $5t top
+          500, $5b top 5k, $50m top 50k, $16m top 3m, $16m top 27m, $16m top
+          120m, $20k bottom 167m (<a href="https://vaults.biz">Checking</a>):
+          $300m top 500, $300k top 3m
         </div>
       </div>
     );
