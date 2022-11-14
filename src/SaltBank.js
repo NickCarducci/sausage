@@ -93,19 +93,42 @@ class SaltBank extends React.Component {
           >
             durable goods tax
           </a>
-          <a
-            {...setting(8, {
-              textDecoration: "none",
-              position: "fixed",
-              right: "30px",
-              top: "40px"
-            })}
-            href="https://sausage.saltbank.org"
+          {window.location.href.includes("https://scopes.cc/") ? (
+            <a
+              {...setting(8, {
+                textDecoration: "none",
+                position: "fixed",
+                right: "30px",
+                top: "40px"
+              })}
+              href="https://sausage.saltbank.org"
+            >
+              &diams;
+            </a>
+          ) : (
+            <div
+              {...setting(8, {
+                textDecoration: "none",
+                position: "fixed",
+                right: "30px",
+                top: "40px"
+              })}
+              onClick={this.props.emulateRoot}
+            >
+              &diams;
+            </div>
+          )}
+          <button
+            onClick={(e) => {
+              e.preventDefault();
+              this.setState({ moreInfo: !this.state.moreInfo });
+            }}
           >
-            &diams;
-          </a>
+            {this.state.moreInfo ? "less" : "more"}
+          </button>
           <div
             style={{
+              fontSize: this.state.moreInfo ? "14px" : "0px",
               display: "flex",
               flexDirection: "column",
               alignItems: "center"
@@ -117,6 +140,9 @@ class SaltBank extends React.Component {
                 (n) revenge, non-rhetorical nor acidic
               </span>
             </h1>
+            <div style={{ fontSize: "12px" }}>
+              equality/deflationary realized economic growth &bull; total runoff
+            </div>
             <h4 {...setting(3)}>depositary valorization by exchange</h4>
             <br />
             <a href="https://truncatedwholesaletax.com">
@@ -135,7 +161,6 @@ class SaltBank extends React.Component {
                 minWidth: "170px",
                 color: "white",
                 backgroundColor: "rgba(20,20,20,.6)",
-                fontSize: "14px",
                 padding: "6px"
               }}
             >
@@ -213,12 +238,10 @@ class SaltBank extends React.Component {
             <a href="https://rolloverinsurance.quora.com">
               <h4 {...setting(7)}>direct or exclusion</h4>
             </a>
-
             <br />
             <a href="https://minimalviableduress.quora.com/">
               <h4 {...setting(11)}>minimal viable duress</h4>
             </a>
-
             <br />
             <div
               style={{
@@ -262,6 +285,7 @@ class SaltBank extends React.Component {
           500, $5b top 5k, $50m top 50k, $16m top 3m, $16m top 27m, $16m top
           120m, $20k bottom 167m (<a href="https://vaults.biz">Checking</a>):
           $300m top 500, $300k top 3m
+          <br />
         </div>
       </div>
     );
