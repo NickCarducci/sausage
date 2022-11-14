@@ -36,6 +36,7 @@ class SaltBank extends React.Component {
     };
     //https://www.quora.com/What-is-the-cause-of-inequality-in-competitive-markets/answer/Nick-Carducci
     //reverse amortization
+    const space = " ";
     return (
       <div
         style={{
@@ -140,8 +141,28 @@ class SaltBank extends React.Component {
                 (n) revenge, non-rhetorical nor acidic
               </span>
             </h1>
-            <div style={{ fontSize: "12px" }}>
+            <div style={{ fontSize: "12px", width: "100%", maxWidth: "300px" }}>
               equality/deflationary realized economic growth &bull; total runoff
+              <br />
+              <br />I study{space}
+              <a href="https://vaults.biz">U.S. economics</a>
+              {space}in which we have{space}
+              <a href="https://fred.stlouisfed.org/graph/?g=WobS">
+                continued claims to compare with unemployment
+              </a>
+              {space}too, *which are usually half as many as initial*, so for
+              every continuing claim there are twice as many initial claims. The
+              labor shortage is not from people not working, it’s from
+              investment labor shorting housing labor, compelling more mundane,
+              non-deflationary work for shrink and time-flation. Other than
+              that, real economic growth is just before-income employee benefits
+              from essential institutions,{space}
+              <i>
+                given the producers price index isn’t included in “real”
+                inflation
+              </i>
+              . The labor shortage is from real GDP growth, and as
+              Bernankesbeard said, we are working more than ever.
             </div>
             <h4 {...setting(3)}>depositary valorization by exchange</h4>
             <br />
@@ -281,10 +302,10 @@ class SaltBank extends React.Component {
           }}
         >
           no <a href="https://realvelocity.asia">capitalization</a>
-          <br />(<a href="https://stocktwits.com/nmc123">Valuation</a>): $5t top
-          500, $5b top 5k, $50m top 50k, $16m top 3m, $16m top 27m, $16m top
-          120m, $20k bottom 167m (<a href="https://vaults.biz">Checking</a>):
-          $300m top 500, $300k top 3m
+          <br />(<a href="https://stocktwits.com/nmc123">Valuation</a>/
+          <a href="https://vaults.biz">Checking</a>): ($5t) $10b/$300m top 500,
+          $5b/? top 5k, $50m/? top 50k, $16m/$300k top 3m, $16m/? top 27m,
+          $16m/? top 120m, $20k bottom 167m
           <br />
         </div>
       </div>
